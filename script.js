@@ -1,4 +1,4 @@
-//generate random password
+//generate random password function
 
 function generate() {
 
@@ -10,7 +10,7 @@ function generate() {
 
     let password = "";
 
-    //create for loop to choose password
+    //create a loop to choose password
     for(var i = 0; i <= complexity; i++){
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
     }
@@ -24,7 +24,7 @@ function generate() {
 
 }
 
-//set default length display of 25
+//set default length of password to 25
 document.getElementById("length").innerHTML = "Length: 25";
 
 //function to set length based on slider position
@@ -36,5 +36,17 @@ document.getElementById("slider").oninput = function() {
     else{
         document.getElementById("length").innerHTML = "Length: 1";
     }
+}
+
+//function for copy to clipboard
+
+function copyClipboard() {
+    
+    document.getElementById("display").select();
+
+    document.execCommand("Copy");
+
+    alert("Password copied to clipboard.");
+
 }
 
